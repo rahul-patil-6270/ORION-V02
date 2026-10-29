@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  /* ORION Warm Observatory Palette */
+  --color-orion-bg: #F6F5F0;
+  --color-orion-surface: #FFFFFF;
+  --color-orion-surface-subtle: #F1EFEA;
+  --color-orion-text: #252923;
+  --color-orion-muted: #777B70;
+  --color-orion-border: #E5E5DD;
+  --color-orion-border-strong: #D2D2C6;
+  --color-orion-sage: #A8B3A0;
+  --color-orion-bronze: #A88B62;
+  --color-orion-forest: #35473C;
+  --color-orion-forest-dark: #27352D;
+  --color-orion-alert: #B94A48;
+  --color-orion-warning: #C97D2C;
+  --color-orion-success: #437A5B;
+
+  /* Chart & Instrument Tokens */
+  --chart-1: 34 32% 52%;   /* Warm bronze */
+  --chart-2: 145 28% 38%;  /* Deep forest */
+  --chart-3: 88 15% 66%;   /* Sage */
+  --chart-4: 12 55% 48%;   /* Terra cotta alert */
+  --chart-5: 45 40% 50%;   /* Solar amber */
+}
+
+:root {
+  --app-bg: #F6F5F0;
+  --app-surface: #FFFFFF;
+  --app-surface-subtle: #F0EEE9;
+  --app-text: #252923;
+  --app-text-muted: #777B70;
+  --app-border: #E5E5DD;
+  --app-border-strong: #D3D3C9;
+  --app-accent: #35473C;
+  --app-bronze: #A88B62;
+}
+
+.dark {
+  --app-bg: #141715;
+  --app-surface: #1C211E;
+  --app-surface-subtle: #232A26;
+  --app-text: #E5E9E4;
+  --app-text-muted: #8F998E;
+  --app-border: #2B332E;
+  --app-border-strong: #3B463F;
+  --app-accent: #A8B3A0;
+  --app-bronze: #C4A57B;
+}
+
+body {
+  margin: 0;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Astronomical Celestial Grid pattern */
+.orion-celestial-grid {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(168, 139, 98, 0.04) 0%, transparent 60%),
+    linear-gradient(to right, rgba(168, 139, 98, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 139, 98, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.dark .orion-celestial-grid {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(196, 165, 123, 0.05) 0%, transparent 70%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Scrollbar configuration */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 123, 112, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 139, 98, 0.5);
+}
+
+/* ORION Refined Panels */
+.orion-card {
+  background-color: var(--app-surface);
+  border: 1px solid var(--app-border);
+  box-shadow: 0 1px 3px rgba(37, 41, 35, 0.04), 0 4px 12px rgba(37, 41, 35, 0.02);
+}
+
+.orion-card-subtle {
+  background-color: var(--app-surface-subtle);
+  border: 1px solid var(--app-border);
+}
+
+/* Subtle astronomical ring decorative container */
+.orion-orbital-ring {
+  border-radius: 9999px;
+  border: 1px dashed rgba(168, 139, 98, 0.25);
+  pointer-events: none;
+}
